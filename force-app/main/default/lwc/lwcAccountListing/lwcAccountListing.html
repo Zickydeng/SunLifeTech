@@ -1,0 +1,21 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Financial Services Account Listing" icon-name="standard:account"> <br />
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" label="Search Account" onchange={handleSearch}></lightning-input><br /><br />
+        </div>
+        <div style="width: auto;">
+            <template if:true={data}>
+                <a onclick={navigateToRecordViewPage}>{label}</a>
+                <lightning-datatable data={data} 
+                columns={columns} key-field="id" 
+                sorted-by={sortBy}
+                sorted-direction={sortDirection} 
+                onsort={handleSortAccountData} 
+                hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
